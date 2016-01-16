@@ -126,6 +126,7 @@
     <Content Include="index.html" />
     <Content Include="Scripts\es6-promise.min.js" />
     <Content Include="Scripts\fetch.js" />
+    <Content Include="Scripts\url.min.js" />
     <Content Include="Web.config" />
     <Content Include="webpack.config.js" />
   </ItemGroup>
@@ -155,25 +156,35 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="Scripts\actions\alertActionCreators.ts" />
+    <TypeScriptCompile Include="Scripts\actions\AlertPayload.ts" />
     <TypeScriptCompile Include="Scripts\actions\index.ts" />
     <TypeScriptCompile Include="Scripts\actions\authActionCreators.ts" />
     <TypeScriptCompile Include="Scripts\actions\AuthPayload.ts" />
-    <TypeScriptCompile Include="Scripts\actions\fetchingActionCreators.ts" />
-    <TypeScriptCompile Include="Scripts\actions\SetFetchingPayload.ts" />
+    <TypeScriptCompile Include="Scripts\actions\LoadPeoplePayload.ts" />
+    <TypeScriptCompile Include="Scripts\actions\masterActionCreators.ts" />
     <TypeScriptCompile Include="Scripts\app.tsx" />
+    <TypeScriptCompile Include="Scripts\components\Alert.tsx" />
     <TypeScriptCompile Include="Scripts\components\IndexPage.tsx" />
     <TypeScriptCompile Include="Scripts\components\Layout.tsx" />
     <TypeScriptCompile Include="Scripts\components\MasterPage.tsx" />
+    <TypeScriptCompile Include="Scripts\components\PagerDataTable.tsx" />
     <TypeScriptCompile Include="Scripts\history.ts" />
+    <TypeScriptCompile Include="Scripts\models\Alert.ts" />
     <TypeScriptCompile Include="Scripts\models\AuthInfo.ts" />
-    <TypeScriptCompile Include="Scripts\models\Fetching.ts" />
+    <TypeScriptCompile Include="Scripts\models\PeopleMaster.ts" />
+    <TypeScriptCompile Include="Scripts\models\Person.ts" />
+    <TypeScriptCompile Include="Scripts\reducers\alertReducers.ts" />
     <TypeScriptCompile Include="Scripts\reducers\authReducers.ts" />
-    <TypeScriptCompile Include="Scripts\reducers\fetchingReducers.ts" />
     <TypeScriptCompile Include="Scripts\reducers\index.ts" />
+    <TypeScriptCompile Include="Scripts\reducers\peopleMasterReducers.ts" />
     <TypeScriptCompile Include="Scripts\webapis\AuthUtils.ts" />
+    <TypeScriptCompile Include="Scripts\webapis\PeopleUtils.ts" />
     <TypeScriptCompile Include="Scripts\__tests__\Sample-test.ts" />
     <TypeScriptCompile Include="typings\es6-promise\es6-promise.d.ts" />
+    <TypeScriptCompile Include="typings\history\history.d.ts" />
     <TypeScriptCompile Include="typings\jest\jest.d.ts" />
+    <TypeScriptCompile Include="typings\jsurl\jsurl.d.ts" />
     <TypeScriptCompile Include="typings\node\node.d.ts" />
     <TypeScriptCompile Include="typings\object-assign\object-assign.d.ts" />
     <TypeScriptCompile Include="typings\react-redux\react-redux.d.ts" />

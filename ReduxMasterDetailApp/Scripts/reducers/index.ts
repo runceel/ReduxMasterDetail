@@ -1,16 +1,20 @@
 ﻿import * as Redux from 'redux';
 import * as authReducers from './authReducers';
-import * as fetchingReducers from './fetchingReducers';
-import Fetching from '../models/Fetching';
+import * as peopleMasterReducers from './peopleMasterReducers';
+import * as alertReducers from './alertReducers';
 import AuthInfo from '../models/AuthInfo';
+import PeopleMaster from '../models/PeopleMaster';
+import Alert from '../models/Alert';
 
 export interface AppState {
     auth: AuthInfo;
-    fetching: Fetching;
+    peopleMaster: PeopleMaster;
+    alert: Alert;
 }
 
 
 export const rootReducer = Redux.combineReducers({
     auth: authReducers.auth,
-    fetching: fetchingReducers.fetching
+    peopleMaster: peopleMasterReducers.master,
+    alert: alertReducers.alert
 });

@@ -12,3 +12,4 @@
 /// <reference path="redux/redux.d.ts" />
 /// <reference path="redux-thunk/redux-thunk.d.ts" />
 /// <reference path="history/history.d.ts" />
+/// <reference path="jsurl/jsurl.d.ts" />

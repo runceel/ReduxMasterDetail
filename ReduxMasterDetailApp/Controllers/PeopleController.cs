@@ -6,7 +6,7 @@ using System.Web.Http;
 namespace ReduxMasterDetailApp.Controllers
 {
     [Authorize]
-    [RoutePrefix("/api/People")]
+    [RoutePrefix("api/People")]
     public class PeopleController : ApiController
     {
         private static List<Person> PeopleSource { get; } = Enumerable.Range(1, 10000)
@@ -34,6 +34,7 @@ namespace ReduxMasterDetailApp.Controllers
         }
 
         [Route("Count")]
+        [HttpGet]
         public IHttpActionResult Count()
         {
             return Ok(PeopleSource.Count);
