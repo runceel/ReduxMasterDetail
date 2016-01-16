@@ -12,8 +12,12 @@
   "dependencies": {
     "es6-promise": "^3.0.2",
     "jest": "^0.1.40",
+    "object-assign": "^4.0.1",
     "react": "^0.14.6",
     "react-dom": "^0.14.6",
+    "react-redux": "^4.0.6",
+    "react-router": "^1.0.3",
+    "redux": "^3.0.5",
     "whatwg-fetch": "^0.10.1"
   },
   "devDependencies": {

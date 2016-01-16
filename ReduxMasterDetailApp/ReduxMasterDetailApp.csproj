@@ -123,8 +123,13 @@
     <TypeScriptCompile Include="typings\es6-promise\es6-promise.d.ts" />
     <TypeScriptCompile Include="typings\jest\jest.d.ts" />
     <TypeScriptCompile Include="typings\node\node.d.ts" />
+    <TypeScriptCompile Include="typings\object-assign\object-assign.d.ts" />
+    <TypeScriptCompile Include="typings\react-redux\react-redux.d.ts" />
+    <TypeScriptCompile Include="typings\react-router\history.d.ts" />
+    <TypeScriptCompile Include="typings\react-router\react-router.d.ts" />
     <TypeScriptCompile Include="typings\react\react-dom.d.ts" />
     <TypeScriptCompile Include="typings\react\react.d.ts" />
+    <TypeScriptCompile Include="typings\redux\redux.d.ts" />
     <TypeScriptCompile Include="typings\tsd.d.ts" />
     <TypeScriptCompile Include="typings\whatwg-fetch\whatwg-fetch.d.ts" />
   </ItemGroup>
