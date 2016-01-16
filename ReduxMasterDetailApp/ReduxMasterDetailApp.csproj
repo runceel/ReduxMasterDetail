@@ -155,8 +155,20 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="Scripts\actions\index.ts" />
+    <TypeScriptCompile Include="Scripts\actions\authActionCreators.ts" />
+    <TypeScriptCompile Include="Scripts\actions\AuthPayload.ts" />
+    <TypeScriptCompile Include="Scripts\actions\fetchingActionCreators.ts" />
+    <TypeScriptCompile Include="Scripts\actions\SetFetchingPayload.ts" />
     <TypeScriptCompile Include="Scripts\app.tsx" />
     <TypeScriptCompile Include="Scripts\components\IndexPage.tsx" />
+    <TypeScriptCompile Include="Scripts\models\AuthInfo.ts" />
+    <TypeScriptCompile Include="Scripts\models\Fetching.ts" />
+    <TypeScriptCompile Include="Scripts\reducers\authReducers.ts" />
+    <TypeScriptCompile Include="Scripts\reducers\fetchingReducers.ts" />
+    <TypeScriptCompile Include="Scripts\reducers\index.ts" />
+    <TypeScriptCompile Include="Scripts\reducers\states.ts" />
+    <TypeScriptCompile Include="Scripts\webapis\AuthUtils.ts" />
     <TypeScriptCompile Include="Scripts\__tests__\Sample-test.ts" />
     <TypeScriptCompile Include="typings\es6-promise\es6-promise.d.ts" />
     <TypeScriptCompile Include="typings\jest\jest.d.ts" />

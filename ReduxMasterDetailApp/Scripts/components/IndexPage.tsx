@@ -3,11 +3,7 @@
 interface IndexPageProps extends React.Props<{}> {
 }
 
-interface IndexPageState {
-    answer: number;
-}
-
-export default class IndexPage extends React.Component<IndexPageProps, IndexPageState> {
+export default class IndexPage extends React.Component<IndexPageProps, {}> {
 
     constructor(props: IndexPageProps) {
         super(props);
