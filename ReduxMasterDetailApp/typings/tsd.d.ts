@@ -10,3 +10,5 @@
 /// <reference path="react-router/history.d.ts" />
 /// <reference path="react-router/react-router.d.ts" />
 /// <reference path="redux/redux.d.ts" />
+/// <reference path="redux-thunk/redux-thunk.d.ts" />
+/// <reference path="history/history.d.ts" />

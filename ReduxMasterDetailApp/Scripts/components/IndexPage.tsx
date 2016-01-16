@@ -1,45 +1,39 @@
 ﻿import * as React from 'react';
+import * as Redux from 'redux';
+import * as ReactRedux from 'react-redux';
+import * as authActionCreators from '../actions/authActionCreators';
 
 interface IndexPageProps extends React.Props<{}> {
+    dispatch?: Redux.Dispatch;
 }
 
-export default class IndexPage extends React.Component<IndexPageProps, {}> {
+class IndexPage extends React.Component<IndexPageProps, {}> {
+    private userName: HTMLInputElement;
+    private password: HTMLInputElement;
 
-    constructor(props: IndexPageProps) {
-        super(props);
-        this.state = { answer: 0 };
-    }
-
-    private handleSubmit(e: React.SyntheticEvent) {
+    private handleSignIn(e: React.SyntheticEvent) {
         e.preventDefault();
-        var x = (this.refs['x'] as HTMLInputElement).value;
-        var y = (this.refs['y'] as HTMLInputElement).value;
-        fetch('api/Calc?x=' + x + '&y=' + y)
-            .then(x => {
-                if (x.status !== 200) {
-                    throw new Error();
-                }
-                return x.json();
-            }).then((x: number) => {
-                this.setState({ answer: x });
-            }).catch(_ => {
-                alert('Error');
-            });
-    }
+        const { dispatch } = this.props;
+        dispatch(authActionCreators.signIn(this.userName.value, this.password.value));
+    };
 
     render() {
         return (
-            <form onSubmit={this.handleSubmit.bind(this)}>
-                <input type='text' ref='x' />
-                &nbsp;
-                +
-                &nbsp;
-                <input type='text' ref='y' />
-                &nbsp;
-                <input type='submit' value='=' />
-                &nbsp;
-                <span>{this.state.answer}</span>
+            <form onSubmit={this.handleSignIn.bind(this)}>
+                <div>
+                    <label htmlFor='userName'>ユーザーID：</label>
+                    <input id='userName' type='text' ref={x => this.userName = x} />
+                </div>
+                <div>
+                    <label htmlFor='password'>パスワード：</label>
+                    <input id='password' type='password' ref={x => this.password = x} />
+                </div>
+                <div>
+                    <input type='submit' value='サインイン' />
+                </div>
             </form>
         );
     }
 }
+
+export default ReactRedux.connect()(IndexPage);

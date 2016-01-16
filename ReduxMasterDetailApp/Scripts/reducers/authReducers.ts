@@ -6,7 +6,7 @@ import assign = require('object-assign');
 function setAuth(state: AuthInfo, action: actions.Action<AuthPayload>): AuthInfo {
     switch (action.type) {
         case AuthPayload.TYPE:
-            return assign({}, state, action.payload);
+            return assign({}, state, action.payload.authInfo);
         default:
             return state;
     }

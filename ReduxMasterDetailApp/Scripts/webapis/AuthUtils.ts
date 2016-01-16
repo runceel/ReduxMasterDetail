@@ -7,15 +7,15 @@ export default class AuthUtils {
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded'
             },
-            body: "grant_type=password&username=${userName}&password=${password}"
+            body: 'grant_type=password&username=' + userName + '&password=' + password
         }).then(x => {
             if (x.status !== 200) {
                 throw Error(x.status.toString());
             }
             return x.json();
-        }).then((x: { access_token: string, userName: string }) => {
+        }).then((x: { access_token: string }) => {
             var authInfo = new AuthInfo();
-            authInfo.userName = x.userName;
+            authInfo.userName = userName;
             authInfo.accessToken = x.access_token;
             return authInfo;
         });

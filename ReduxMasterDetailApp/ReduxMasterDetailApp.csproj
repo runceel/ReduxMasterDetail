@@ -162,12 +162,14 @@
     <TypeScriptCompile Include="Scripts\actions\SetFetchingPayload.ts" />
     <TypeScriptCompile Include="Scripts\app.tsx" />
     <TypeScriptCompile Include="Scripts\components\IndexPage.tsx" />
+    <TypeScriptCompile Include="Scripts\components\Layout.tsx" />
+    <TypeScriptCompile Include="Scripts\components\MasterPage.tsx" />
+    <TypeScriptCompile Include="Scripts\history.ts" />
     <TypeScriptCompile Include="Scripts\models\AuthInfo.ts" />
     <TypeScriptCompile Include="Scripts\models\Fetching.ts" />
     <TypeScriptCompile Include="Scripts\reducers\authReducers.ts" />
     <TypeScriptCompile Include="Scripts\reducers\fetchingReducers.ts" />
     <TypeScriptCompile Include="Scripts\reducers\index.ts" />
-    <TypeScriptCompile Include="Scripts\reducers\states.ts" />
     <TypeScriptCompile Include="Scripts\webapis\AuthUtils.ts" />
     <TypeScriptCompile Include="Scripts\__tests__\Sample-test.ts" />
     <TypeScriptCompile Include="typings\es6-promise\es6-promise.d.ts" />
@@ -179,6 +181,7 @@
     <TypeScriptCompile Include="typings\react-router\react-router.d.ts" />
     <TypeScriptCompile Include="typings\react\react-dom.d.ts" />
     <TypeScriptCompile Include="typings\react\react.d.ts" />
+    <TypeScriptCompile Include="typings\redux-thunk\redux-thunk.d.ts" />
     <TypeScriptCompile Include="typings\redux\redux.d.ts" />
     <TypeScriptCompile Include="typings\tsd.d.ts" />
     <TypeScriptCompile Include="typings\whatwg-fetch\whatwg-fetch.d.ts" />
