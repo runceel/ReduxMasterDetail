@@ -168,6 +168,7 @@
     <TypeScriptCompile Include="Scripts\components\IndexPage.tsx" />
     <TypeScriptCompile Include="Scripts\components\Layout.tsx" />
     <TypeScriptCompile Include="Scripts\components\MasterPage.tsx" />
+    <TypeScriptCompile Include="Scripts\components\Pager.tsx" />
     <TypeScriptCompile Include="Scripts\components\PagerDataTable.tsx" />
     <TypeScriptCompile Include="Scripts\history.ts" />
     <TypeScriptCompile Include="Scripts\models\Alert.ts" />

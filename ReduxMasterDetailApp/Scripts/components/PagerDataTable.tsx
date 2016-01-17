@@ -1,4 +1,5 @@
 ﻿import * as React from 'react';
+import Pager from './Pager';
 
 interface PagerDataTableProps extends React.Props<{}> {
     pageSize: number;
@@ -6,6 +7,7 @@ interface PagerDataTableProps extends React.Props<{}> {
     datas: any[]
     renderRow: (row: any) => JSX.Element;
     renderHeader: () => JSX.Element;
+    onPageChange: (page: number) => void;
 }
 
 interface PagerDataTableState {
@@ -16,6 +18,10 @@ export default class PagerDataTable extends React.Component<PagerDataTableProps,
     constructor(props: PagerDataTableProps) {
         super(props);
         this.state = { page: 0 };
+    }
+
+    private handlePageChange(page: number) {
+        this.props.onPageChange(page);
     }
 
     render() {
@@ -31,6 +37,7 @@ export default class PagerDataTable extends React.Component<PagerDataTableProps,
                         {rows}
                     </tbody>
                 </table>
+                <Pager pageSize={this.props.pageSize} dataCount={this.props.dataCount} onPageChange={this.handlePageChange.bind(this)}/>
             </div>
         );
     }

@@ -32,11 +32,16 @@ class MasterPage extends React.Component<MasterPageProps, {}> {
 
     private handleRenderRow(row: Person) {
         return (
-            <tr>
+            <tr key={row.id}>
                 <td>{row.name}</td>
                 <td>{row.age}</td>
             </tr>
         );
+    }
+
+    private handlePageChange(page: number) {
+        const { dispatch } = this.props;
+        dispatch(masterActionCreators.loadPeople(page * PAGE_SIZE, PAGE_SIZE));
     }
 
     render() {
@@ -47,7 +52,8 @@ class MasterPage extends React.Component<MasterPageProps, {}> {
                     pageSize={PAGE_SIZE}
                     datas={this.props.datas}
                     renderHeader={this.handleRenderHeader.bind(this)}
-                    renderRow={this.handleRenderRow.bind(this)}/>
+                    renderRow={this.handleRenderRow.bind(this)}
+                    onPageChange={this.handlePageChange.bind(this)}/>
             </div>
         );
     }
