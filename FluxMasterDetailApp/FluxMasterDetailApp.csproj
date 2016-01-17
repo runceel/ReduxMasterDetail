@@ -126,6 +126,7 @@
     <Content Include="index.html" />
     <Content Include="Scripts\es6-promise.min.js" />
     <Content Include="Scripts\fetch.js" />
+    <Content Include="Scripts\url.min.js" />
     <Content Include="Web.config" />
     <Content Include="webpack.config.js" />
   </ItemGroup>
@@ -155,13 +156,25 @@
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="Scripts\actions\AuthActionCreators.ts" />
+    <TypeScriptCompile Include="Scripts\actions\AuthSuccessAction.ts" />
     <TypeScriptCompile Include="Scripts\app.tsx" />
+    <TypeScriptCompile Include="Scripts\components\Layout.tsx" />
     <TypeScriptCompile Include="Scripts\components\IndexPage.tsx" />
+    <TypeScriptCompile Include="Scripts\components\MasterPage.tsx" />
+    <TypeScriptCompile Include="Scripts\dispatchers\dispatcher.ts" />
+    <TypeScriptCompile Include="Scripts\history.ts" />
+    <TypeScriptCompile Include="Scripts\models\Auth.ts" />
+    <TypeScriptCompile Include="Scripts\models\Person.ts" />
+    <TypeScriptCompile Include="Scripts\stores\authStore.ts" />
+    <TypeScriptCompile Include="Scripts\webapis\AuthUtils.ts" />
+    <TypeScriptCompile Include="Scripts\webapis\PeopleUtils.ts" />
     <TypeScriptCompile Include="Scripts\__tests__\Sample-test.ts" />
     <TypeScriptCompile Include="typings\es6-promise\es6-promise.d.ts" />
     <TypeScriptCompile Include="typings\flux\flux.d.ts" />
     <TypeScriptCompile Include="typings\history\history.d.ts" />
     <TypeScriptCompile Include="typings\jest\jest.d.ts" />
+    <TypeScriptCompile Include="typings\jsurl\jsurl.d.ts" />
     <TypeScriptCompile Include="typings\node\node.d.ts" />
     <TypeScriptCompile Include="typings\object-assign\object-assign.d.ts" />
     <TypeScriptCompile Include="typings\react-router\history.d.ts" />
