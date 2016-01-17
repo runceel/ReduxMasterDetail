@@ -12,9 +12,30 @@ interface DetailPageProps extends ReactRouter.RouteComponentProps<{}, {id: numbe
 }
 
 class DetailPage extends React.Component<DetailPageProps, {}> {
+    private name: HTMLInputElement;
+    private age: HTMLInputElement;
+
+    private handleSubmit(e: React.SyntheticEvent) {
+        e.preventDefault();
+        const { dispatch } = this.props;
+        var p = new Person();
+        p.id = this.props.detail.id;
+        p.name = this.name.value;
+        p.age = parseInt(this.age.value);
+        dispatch(detailActionCreators.update(p));
+    }
+
     componentDidMount() {
         const { dispatch } = this.props;
         dispatch(detailActionCreators.select(this.props.routeParams.id));
+    }
+
+    componentWillReceiveProps(nextProps: DetailPageProps) {
+        if (this.props.detail !== nextProps.detail) {
+            const { name, age } = nextProps.detail;
+            this.name.value = name;
+            this.age.value = age ? age.toString() : '';
+        }
     }
 
     render() {
@@ -26,14 +47,14 @@ class DetailPage extends React.Component<DetailPageProps, {}> {
                     <Link to='/master'>戻る</Link>
                 </div>
                 <div>
-                    <form>
+                    <form onSubmit={this.handleSubmit.bind(this)}>
                         <div>
                             <label htmlFor='name'>名前</label>
-                            <input id='name' type='text' value={this.props.detail.name ? this.props.detail.name : ''} />
+                            <input id='name' type='text' ref={node => this.name = node} />
                         </div>
                         <div>
                             <label htmlFor='age'>年齢</label>
-                            <input id='age' type='text' value={this.props.detail.age ? this.props.detail.age.toString() : ''} />
+                            <input id='age' type='text' ref={node => this.age = node}/>
                         </div>
                         <input type='submit' value='保存' />
                     </form>
@@ -45,7 +66,7 @@ class DetailPage extends React.Component<DetailPageProps, {}> {
 
 function select(state: reducers.AppState): DetailPageProps {
     return {
-        detail: assign({}, state.detail) as Person
+        detail: state.detail
     };
 }
 

@@ -20,7 +20,19 @@ export function select(id: number) {
             .then(x => {
                 dispatch(setDetail(x));
             }).catch(x => {
-                alertActionCreators.alert('データ取得時にエラーが発生しました');
+                dispatch(alertActionCreators.alert('データ取得時にエラーが発生しました'));
+            });
+    };
+}
+
+export function update(p: Person) {
+    return (dispatch: Redux.Dispatch, getState: () => reducers.AppState) => {
+        var state = getState();
+        PeopleUtils.update(state.auth.accessToken, p)
+            .then(_ => {
+                dispatch(alertActionCreators.alert('更新が完了しました'));
+            }).catch(x => {
+                dispatch(alertActionCreators.alert('データ更新に失敗しました'));
             });
     };
 }

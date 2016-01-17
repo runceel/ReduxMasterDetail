@@ -31,7 +31,7 @@ export default class PeopleUtils {
             return x.json();
         }).then((x: number) => {
             return x;
-        });;
+        });
     }
 
     static get(token: string, id: number): Promise<Person> {
@@ -45,5 +45,20 @@ export default class PeopleUtils {
             }
             return x.json();
         }).then((x: Person) => x);
+    }
+
+    static update(token: string, p: Person): Promise<void> {
+        return fetch('api/People/' + p.id, {
+            method: 'PUT',
+            headers: {
+                'Authorization': 'Bearer ' + token,
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(p)
+        }).then(x => {
+            if (x.status !== 200) {
+                throw new Error(x.status.toString());
+            }
+        });
     }
 }
