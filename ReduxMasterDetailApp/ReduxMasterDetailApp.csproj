@@ -158,6 +158,8 @@
   <ItemGroup>
     <TypeScriptCompile Include="Scripts\actions\alertActionCreators.ts" />
     <TypeScriptCompile Include="Scripts\actions\AlertPayload.ts" />
+    <TypeScriptCompile Include="Scripts\actions\detailActionCreators.ts" />
+    <TypeScriptCompile Include="Scripts\actions\DetailActionPayload.ts" />
     <TypeScriptCompile Include="Scripts\actions\index.ts" />
     <TypeScriptCompile Include="Scripts\actions\authActionCreators.ts" />
     <TypeScriptCompile Include="Scripts\actions\AuthPayload.ts" />
@@ -165,6 +167,7 @@
     <TypeScriptCompile Include="Scripts\actions\masterActionCreators.ts" />
     <TypeScriptCompile Include="Scripts\app.tsx" />
     <TypeScriptCompile Include="Scripts\components\Alert.tsx" />
+    <TypeScriptCompile Include="Scripts\components\DetailPage.tsx" />
     <TypeScriptCompile Include="Scripts\components\IndexPage.tsx" />
     <TypeScriptCompile Include="Scripts\components\Layout.tsx" />
     <TypeScriptCompile Include="Scripts\components\MasterPage.tsx" />
@@ -177,6 +180,7 @@
     <TypeScriptCompile Include="Scripts\models\Person.ts" />
     <TypeScriptCompile Include="Scripts\reducers\alertReducers.ts" />
     <TypeScriptCompile Include="Scripts\reducers\authReducers.ts" />
+    <TypeScriptCompile Include="Scripts\reducers\detailReducers.ts" />
     <TypeScriptCompile Include="Scripts\reducers\index.ts" />
     <TypeScriptCompile Include="Scripts\reducers\peopleMasterReducers.ts" />
     <TypeScriptCompile Include="Scripts\webapis\AuthUtils.ts" />

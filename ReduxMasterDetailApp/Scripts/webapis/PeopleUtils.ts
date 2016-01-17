@@ -33,4 +33,17 @@ export default class PeopleUtils {
             return x;
         });;
     }
+
+    static get(token: string, id: number): Promise<Person> {
+        return fetch('api/People/' + id, {
+            headers: {
+                'Authorization': 'Bearer ' + token
+            }
+        }).then(x => {
+            if (x.status !== 200) {
+                throw new Error(x.status.toString());
+            }
+            return x.json();
+        }).then((x: Person) => x);
+    }
 }

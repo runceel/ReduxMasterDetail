@@ -3,6 +3,7 @@ import * as ReactDOM from 'react-dom';
 import Layout from './components/Layout';
 import IndexPage from './components/IndexPage';
 import MasterPage from './components/MasterPage';
+import DetailPage from './components/DetailPage';
 import * as Redux from 'redux';
 import {Provider} from 'react-redux';
 import thunk = require('redux-thunk');
@@ -15,6 +16,7 @@ const router = (
         <Route path='/' component={Layout}>
             <IndexRoute component={IndexPage} />
             <Route path='/master' component={MasterPage} />
+            <Route path='/detail/:id' component={DetailPage} />
         </Route>
     </Router>
 );

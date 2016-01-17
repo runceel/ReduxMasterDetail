@@ -5,6 +5,7 @@ import * as masterActionCreators from '../actions/masterActionCreators';
 import PagerDataTable from './PagerDataTable';
 import Person from '../models/Person';
 import * as reducers from '../reducers';
+import history from '../history';
 
 interface MasterPageProps extends React.Props<{}> {
     dispatch?: Redux.Dispatch;
@@ -26,8 +27,13 @@ class MasterPage extends React.Component<MasterPageProps, {}> {
             <tr>
                 <th>名前</th>
                 <th>年齢</th>
+                <th></th>
             </tr>
         );
+    }
+
+    private handleEditClick(id: number) {
+        history.push('/detail/' + id);
     }
 
     private handleRenderRow(row: Person) {
@@ -35,6 +41,12 @@ class MasterPage extends React.Component<MasterPageProps, {}> {
             <tr key={row.id}>
                 <td>{row.name}</td>
                 <td>{row.age}</td>
+                <td>
+                    <a href='#' onClick={e => {
+                        e.preventDefault();
+                        this.handleEditClick(row.id);
+                    }}>編集</a>
+                </td>
             </tr>
         );
     }
